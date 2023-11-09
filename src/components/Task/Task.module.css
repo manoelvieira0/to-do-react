@@ -30,6 +30,10 @@
   border: 2px solid var(--blue-300);
 }
 
+.checkContainer svg {
+  color: var(--purple-300);
+}
+
 .deleteButton {
   background: none;
   border: none;

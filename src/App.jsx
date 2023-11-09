@@ -33,12 +33,26 @@ export function App() {
     setTasks(newTasks);
   }
 
+  function toogleTaskCompleted(taskId){
+    const newTasks = tasks.map(task => {
+      if(task.id === taskId){
+        return {
+        ...task,
+          isCompleted: !task.isCompleted
+        }
+      }
+      return task;
+    })
+    setTasks(newTasks);
+  }
+
   return (
     <div>
       <Header onAddTask={addTask}/>
       <Tasks 
         tasks={tasks}
         onDelete={deleteTask}
+        onComplete={toogleTaskCompleted}
       />
     </div>
   )
