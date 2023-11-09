@@ -9,12 +9,28 @@ export function App() {
       id: 1,
       title: 'Estudar',
       isCompleted: false
+    },
+    {
+      id: 2,
+      title: 'Ler',
+      isCompleted: true
     }
   ]);
 
+  function addTask(taskTitle){
+    setTasks([
+      ...tasks, 
+      {
+        id: crypto.randomUUID(),
+        title: taskTitle,
+        isCompleted: false
+      }
+    ])
+  }
+
   return (
     <div>
-      <Header />
+      <Header onAddTask={addTask}/>
       <Tasks 
         tasks={tasks}
       />
