@@ -2,5 +2,8 @@
   background: var(--gray-700);
   display: flex;
   justify-content: center;
-  padding: 7.2rem 0;
+  align-items: center;
+  height: 20rem;
+  width: 100%;
+  position: relative;
 }
