@@ -28,11 +28,17 @@ export function App() {
     ])
   }
 
+  function deleteTask(taskId){
+    const newTasks = tasks.filter(task => task.id !== taskId);
+    setTasks(newTasks);
+  }
+
   return (
     <div>
       <Header onAddTask={addTask}/>
       <Tasks 
         tasks={tasks}
+        onDelete={deleteTask}
       />
     </div>
   )
