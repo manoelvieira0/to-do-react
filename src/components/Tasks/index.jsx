@@ -1,24 +1,28 @@
 import { Task } from '../Task'
 import styles from './Tasks.module.css'
 
-export function Tasks(){
+export function Tasks({tasks}){
+  const taskQuantity = tasks.length;
+  const completedTasks = tasks.filter(task => task.isCompleted).length;
+
   return (
     <section className={styles.tasks}>
       <header className={styles.header}>
         <div className={styles.createdTasks}>
           <p>Tarefas criadas</p>
-          <span>5</span>
+          <span>{taskQuantity}</span>
         </div>
 
         <div className={styles.completedTasks}>
           <p>Concluídas</p>
-          <span>2 de 5</span>
+          <span>{completedTasks} de {taskQuantity}</span>
         </div>
       </header>
 
       <div className={styles.list}>
-        <Task />
-        <Task />
+        {tasks.map((task) => {
+          return <Task key={task.id} task={task} />;
+        })}
       </div>
     </section>
   )
