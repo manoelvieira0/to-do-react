@@ -7,3 +7,52 @@
   width: 100%;
   position: relative;
 }
+
+.newTaskForm {
+  position: absolute;
+  height: 5.4rem;
+  width: 100%;
+  max-width: 73.6rem;
+  bottom: calc(-5.4rem/2);
+  display: flex;
+  gap: 0.8rem;
+  padding: 0 1rem;
+}
+
+.newTaskForm input {
+  height: 100%;
+  flex: 1;
+  color: var(--gray-200);
+  background: var(--gray-500);
+  border: 1px solid var(--gray-700);
+  border-radius: 8px;
+  padding: 0 1.6rem;
+  font-size: 1.6rem;
+}
+
+.newTaskForm input:focus {
+  outline: 1px solid var(--purple-500);
+}
+
+.newTaskForm button {
+  height: 100%;
+  padding: 0 1.6rem;
+  background: var(--blue-500);
+  color: var(--gray-100);
+  border: none;
+  border-radius: 8px;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 0.8rem;
+  cursor: pointer;
+
+  transition: background 0.2s;
+}
+
+.newTaskForm button:hover {
+  background: var(--blue-300);
+}
